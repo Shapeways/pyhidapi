@@ -161,7 +161,8 @@ def __load_hidapi():
             raise RuntimeError('Could not find the hidapi shared library.')
 
         # Load the hidapi library.
-        __hidapi = CDLL(__libpath)
+        __hidapi = CDLL('/usr/local/lib/libhidapi-libusb.so')
+        # __hidapi = CDLL(__libpath)
         assert __hidapi is not None
 
         # Define argument and return types for the hidapi library functions.
